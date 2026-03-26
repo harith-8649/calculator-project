@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Powerful Calculator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="calculator" role="application" aria-label="Calculator">
+        <div class="display" aria-live="polite">
+          <div id="calc-expression" class="expression" aria-hidden="true"></div>
+          <div class="value-row">
+            <input
+              id="calc-display"
+              class="display-value"
+              type="text"
+              inputmode="decimal"
+              value="0"
+              readonly
+              aria-label="Calculator display"
+            />
+          </div>
+        </div>
+
+        <div class="keys" aria-label="Calculator keys">
+          <!-- Memory row -->
+          <button class="btn btn-secondary" data-action="mem-clear" type="button" aria-label="Memory clear">
+            MC
+          </button>
+          <button class="btn btn-secondary" data-action="mem-recall" type="button" aria-label="Memory recall">
+            MR
+          </button>
+          <button class="btn btn-secondary" data-action="mem-add" type="button" aria-label="Memory add">
+            M+
+          </button>
+          <button class="btn btn-secondary" data-action="mem-subtract" type="button" aria-label="Memory subtract">
+            M-
+          </button>
+
+          <!-- Utility row -->
+          <button class="btn btn-danger" data-action="clear" type="button" aria-label="All clear">
+            AC
+          </button>
+          <button class="btn btn-secondary" data-action="backspace" type="button" aria-label="Backspace">
+            ⌫
+          </button>
+          <button class="btn btn-secondary" data-action="sqrt" type="button" aria-label="Square root">
+            √
+          </button>
+          <button class="btn btn-secondary" data-action="square" type="button" aria-label="Square">
+            x²
+          </button>
+
+          <!-- Digits / operations -->
+          <button class="btn" data-action="digit" data-value="7" type="button">7</button>
+          <button class="btn" data-action="digit" data-value="8" type="button">8</button>
+          <button class="btn" data-action="digit" data-value="9" type="button">9</button>
+          <button class="btn btn-operator" data-action="operator" data-value="/" type="button">÷</button>
+
+          <button class="btn" data-action="digit" data-value="4" type="button">4</button>
+          <button class="btn" data-action="digit" data-value="5" type="button">5</button>
+          <button class="btn" data-action="digit" data-value="6" type="button">6</button>
+          <button class="btn btn-operator" data-action="operator" data-value="*" type="button">×</button>
+
+          <button class="btn" data-action="digit" data-value="1" type="button">1</button>
+          <button class="btn" data-action="digit" data-value="2" type="button">2</button>
+          <button class="btn" data-action="digit" data-value="3" type="button">3</button>
+          <button class="btn btn-operator" data-action="operator" data-value="-" type="button">−</button>
+
+          <button class="btn btn-secondary" data-action="sign" type="button" aria-label="Toggle sign">
+            +/-
+          </button>
+          <button class="btn" data-action="digit" data-value="0" type="button">0</button>
+          <button class="btn" data-action="decimal" type="button">.</button>
+          <button class="btn btn-operator" data-action="operator" data-value="+" type="button">+</button>
+
+          <!-- Advanced -->
+          <button class="btn btn-secondary" data-action="percent" type="button" aria-label="Percent">%</button>
+          <button class="btn btn-secondary" data-action="reciprocal" type="button" aria-label="Reciprocal">1/x</button>
+          <button class="btn btn-equals" data-action="equals" type="button" aria-label="Equals">=</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,169 @@
+:root {
+  --bg0: #0b1020;
+  --bg1: #121a33;
+  --card: rgba(255, 255, 255, 0.06);
+  --card-border: rgba(255, 255, 255, 0.12);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.62);
+
+  --btn: rgba(255, 255, 255, 0.08);
+  --btn-border: rgba(255, 255, 255, 0.14);
+  --btn-hover: rgba(255, 255, 255, 0.12);
+  --btn-active: rgba(255, 255, 255, 0.16);
+
+  --accent: #7c5cff;
+  --accent2: #19d3ff;
+  --danger: #ff4d6d;
+  --operator: rgba(124, 92, 255, 0.22);
+  --operator-border: rgba(124, 92, 255, 0.35);
+  --equals: rgba(25, 211, 255, 0.22);
+  --equals-border: rgba(25, 211, 255, 0.42);
+
+  --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1000px 600px at 15% 10%, rgba(124, 92, 255, 0.35), transparent 55%),
+    radial-gradient(900px 600px at 85% 35%, rgba(25, 211, 255, 0.25), transparent 55%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.page {
+  width: min(560px, 100%);
+}
+
+.calculator {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.045));
+  border: 1px solid var(--card-border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: clamp(14px, 2.2vw, 20px);
+}
+
+.display {
+  padding: clamp(12px, 2.2vw, 18px);
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  margin-bottom: clamp(12px, 2vw, 16px);
+}
+
+.expression {
+  min-height: 22px;
+  font-size: clamp(12px, 2.0vw, 14px);
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.value-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.display-value {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-weight: 700;
+  font-size: clamp(26px, 5vw, 40px);
+  letter-spacing: 0.5px;
+  text-align: right;
+  padding: 0;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(8px, 1.2vw, 12px);
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid var(--btn-border);
+  background: var(--btn);
+  color: var(--text);
+  border-radius: 16px;
+  padding: 0;
+  min-height: clamp(44px, 7vh, 64px);
+  font-size: clamp(16px, 3.2vw, 20px);
+  font-weight: 650;
+  cursor: pointer;
+  transition: transform 90ms ease, background 160ms ease, border-color 160ms ease, filter 160ms ease;
+  display: grid;
+  place-items: center;
+  user-select: none;
+}
+
+.btn:hover {
+  background: var(--btn-hover);
+}
+
+.btn:active {
+  background: var(--btn-active);
+  transform: translateY(1px);
+}
+
+.btn:focus-visible {
+  outline: 3px solid rgba(124, 92, 255, 0.55);
+  outline-offset: 2px;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.btn-danger {
+  background: rgba(255, 77, 109, 0.18);
+  border-color: rgba(255, 77, 109, 0.32);
+}
+
+.btn-operator {
+  background: var(--operator);
+  border-color: var(--operator-border);
+}
+
+.btn-equals {
+  grid-column: span 2;
+  background: var(--equals);
+  border-color: var(--equals-border);
+}
+
+/* Slightly compact layout on very small screens */
+@media (max-width: 360px) {
+  .calculator {
+    padding: 12px;
+  }
+  .display {
+    padding: 10px;
+  }
+  .keys {
+    gap: 8px;
+  }
+  .btn {
+    border-radius: 14px;
+    min-height: 42px;
+  }
+}
+
